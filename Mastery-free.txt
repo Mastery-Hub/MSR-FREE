@@ -1,3 +1,60 @@
+local keys = {
+    ["df3be29b-3649-4bc2-b4e5-7c7e36228179"] = true,
+    ["383e652d-67c8-4693-b6a4-53a8bfe33f88"] = true,
+    ["c67200ef-e754-4722-8b16-b76311693c4d"] = true,
+    ["ad475863-da4f-4358-81a5-69a0fef5bb76"] = true,
+    ["a1105ea7-7a29-4504-9573-e1467d74cfb0"] = true,
+    ["8da9fa5f-f474-4abc-9365-4e0d0ddefa7b"] = true,
+    ["fb704535-9c1f-44f7-82ab-928f71d94bb3"] = true,
+    ["622ee71a-03a2-46de-b67f-617f6172e1f3"] = true,
+    ["5676b378-4d2d-4096-b947-2e7f3ce40e3d"] = true,
+    ["6a15e9ab-aadf-41a7-bef9-5a905f5f0c4a"] = true,
+    ["dcdb5839-13d2-4d1a-a9ba-3ee861c677be"] = true,
+    ["f67092f7-9767-45dc-86f7-2f90b39c4891"] = true,
+    ["60c6cc6e-1321-453b-b538-3dbe11c45112"] = true,
+    ["6dca39ff-f909-4ec0-9677-d15df4ac4018"] = true,
+    ["f1174166-e9ee-429d-b47b-0c5633bbe178"] = true,
+    ["0941c4c7-8bac-4382-9176-a91f14ab0c61"] = true,
+    ["a954a182-2278-4347-8a8c-c5d45d845d6c"] = true,
+    ["ca42d35f-3407-4210-a283-8421938cb35c"] = true,
+    ["36950c3f-c1be-44d1-ac18-91c0c1da1aa0"] = true,
+    ["9e943519-7c71-41ab-b29a-bb1783432000"] = true,
+    ["7fbc5e65-015d-4717-9871-2e00f47aefbc"] = true,
+    ["be15e137-14f7-47b0-9236-5f6290090f64"] = true,
+    ["dd3a2a1c-5b34-4fe0-97c3-425886619c57"] = true,
+    ["b5268bc8-507a-43be-8f2a-75d037a4ef28"] = true,
+    ["f98ef630-aa7a-4d77-a49b-a074dbb872bb"] = true,
+    ["92dc6aa5-d839-4e10-86b0-84f56855c738"] = true,
+    ["5a0b4490-b3ae-43d9-bab4-f385360adc13"] = true,
+    ["c5310bfd-13fe-42ee-8a0d-5ea06255d734"] = true,
+    ["336795fb-6e95-4834-87c8-8ed0e4d81de4"] = true,
+    ["378616bd-2324-47f6-977e-171d86e3074b"] = true,
+    ["84a77bc8-f626-4ae0-876e-190ccbc33e50"] = true,
+    ["34e88c0d-0c04-4ec3-af11-57f499d86ea3"] = true,
+    ["3a879301-a28a-4e4b-b237-91695f8d9bbb"] = true,
+    ["5541e754-8bf0-4cd7-ba68-6dcc02d6e204"] = true,
+    ["07e99a9c-2998-417f-a9b2-6abf720ad052"] = true,
+    ["150a6c8f-6e50-488d-91b9-4f2322dd47ad"] = true,
+    ["76022acb-36c8-4f69-8872-1998ba568db2"] = true,
+    ["cfec9b6a-b72b-4de6-8adb-d954b631b758"] = true,
+    ["9ee05664-d0bd-4261-9c2a-5919a132c258"] = true,
+    ["7405791d-bcf8-4e49-9215-c70b415f28dc"] = true,
+    ["99669e14-205d-4759-902f-e009357ec245"] = true,
+    ["3b7a7f4c-4f03-484b-8e9b-5adcb40d9aa3"] = true,
+    ["caeed0fc-5384-44dd-8058-c3ab1bab7a58"] = true,
+    ["5a6ab739-ab07-45ef-a80e-ccdb6b9790b3"] = true,
+    ["baa35508-94e8-45c3-b0b7-42892ddc2c4e"] = true,
+    ["c11fb845-db36-49ed-a299-0cb77712df9d"] = true,
+    ["bb40d302-20e1-4aa4-9f06-10258577b094"] = true,
+    ["0b424c1f-21a6-4e19-aeee-5d3b0305b113"] = true,
+    ["552d33de-96f8-4758-bf77-9ca8c953d6e4"] = true,
+    ["34f449c9-e276-4e05-beee-f4e4cefe2282"] = true
+}
+
+
+-- Kiểm tra xem Key có tồn tại và hợp lệ không
+if getgenv().Key and keys[getgenv().Key] then
+    print("CORRECT KEY! LOADING...")
 -- Roblox Key System UI Script
 -- This script creates a user interface for a key system in Roblox
 
@@ -11,56 +68,7 @@ local TweenService = game:GetService("TweenService")
 -- Configuration
 local CONFIG = {
 	KEYS = {
-		"df3be29b-3649-4bc2-b4e5-7c7e36228179",
-        "383e652d-67c8-4693-b6a4-53a8bfe33f88",
-        "c67200ef-e754-4722-8b16-b76311693c4d",
-        "ad475863-da4f-4358-81a5-69a0fef5bb76",
-        "a1105ea7-7a29-4504-9573-e1467d74cfb0",
-        "8da9fa5f-f474-4abc-9365-4e0d0ddefa7b",
-        "fb704535-9c1f-44f7-82ab-928f71d94bb3",
-        "622ee71a-03a2-46de-b67f-617f6172e1f3",
-        "5676b378-4d2d-4096-b947-2e7f3ce40e3d",
-        "6a15e9ab-aadf-41a7-bef9-5a905f5f0c4a",
-        "dcdb5839-13d2-4d1a-a9ba-3ee861c677be",
-        "f67092f7-9767-45dc-86f7-2f90b39c4891",
-        "60c6cc6e-1321-453b-b538-3dbe11c45112",
-        "6dca39ff-f909-4ec0-9677-d15df4ac4018",
-        "f1174166-e9ee-429d-b47b-0c5633bbe178",
-        "0941c4c7-8bac-4382-9176-a91f14ab0c61",
-        "a954a182-2278-4347-8a8c-c5d45d845d6c",
-        "ca42d35f-3407-4210-a283-8421938cb35c",
-        "36950c3f-c1be-44d1-ac18-91c0c1da1aa0",
-        "9e943519-7c71-41ab-b29a-bb1783432000",
-        "7fbc5e65-015d-4717-9871-2e00f47aefbc",
-        "be15e137-14f7-47b0-9236-5f6290090f64",
-        "dd3a2a1c-5b34-4fe0-97c3-425886619c57",
-        "b5268bc8-507a-43be-8f2a-75d037a4ef28",
-        "f98ef630-aa7a-4d77-a49b-a074dbb872bb",
-        "92dc6aa5-d839-4e10-86b0-84f56855c738",
-        "5a0b4490-b3ae-43d9-bab4-f385360adc13",
-        "c5310bfd-13fe-42ee-8a0d-5ea06255d734",
-        "336795fb-6e95-4834-87c8-8ed0e4d81de4",
-        "378616bd-2324-47f6-977e-171d86e3074b",
-        "84a77bc8-f626-4ae0-876e-190ccbc33e50",
-        "34e88c0d-0c04-4ec3-af11-57f499d86ea3",
-        "3a879301-a28a-4e4b-b237-91695f8d9bbb",
-        "5541e754-8bf0-4cd7-ba68-6dcc02d6e204",
-        "07e99a9c-2998-417f-a9b2-6abf720ad052",
-        "150a6c8f-6e50-488d-91b9-4f2322dd47ad",
-        "76022acb-36c8-4f69-8872-1998ba568db2",
-        "cfec9b6a-b72b-4de6-8adb-d954b631b758",
-        "9ee05664-d0bd-4261-9c2a-5919a132c258",
-        "7405791d-bcf8-4e49-9215-c70b415f28dc",
-        "99669e14-205d-4759-902f-e009357ec245",
-        "3b7a7f4c-4f03-484b-8e9b-5adcb40d9aa3",
-        "caeed0fc-5384-44dd-8058-c3ab1bab7a58",
-        "5a6ab739-ab07-45ef-a80e-ccdb6b9790b3",
-        "baa35508-94e8-45c3-b0b7-42892ddc2c4e",
-        "c11fb845-db36-49ed-a299-0cb77712df9d",
-        "bb40d302-20e1-4aa4-9f06-10258577b094",
-        "0b424c1f-21a6-4e19-aeee-5d3b0305b113",
-        "552d33de-96f8-4758-bf77-9ca8c953d6e4",
-        "34f449c9-e276-4e05-beee-f4e4cefe2282"
+		
 	},
 	MAX_ATTEMPTS = 3,
 	REMOTE_EVENT_NAME = "ValidateKey" -- Change this to match your RemoteEvent name
@@ -8449,95 +8457,8 @@ if currentTime - lastNotificationTime >= notificationCooldown then
 end
 
 else
-			-- Key is invalid
-			attempts = attempts - 1
-			
-			if attempts <= 0 then
-				StatusLabel.Text = "Too many attempts. Try again later."
-				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
-				SubmitButton.Visible = false
-				KeyInput.Visible = false
-				
-				-- Kick the player after a delay
-				wait(3)
-				Player:Kick("Too many invalid key attempts")
-			else
-				StatusLabel.Text = "Invalid key! Attempts remaining: " .. attempts
-				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
-				
-				-- Shake animation for invalid key
-				local originalPosition = MainFrame.Position
-				for i = 1, 5 do
-					MainFrame.Position = originalPosition + UDim2.new(0, math.random(-5, 5), 0, 0)
-					wait(0.05)
-				end
-				MainFrame.Position = originalPosition
-			end
-		end
-	end)
-	
-	-- Handle get key button click
-	GetKeyButton.MouseButton1Click:Connect(function()
-		-- Here you would typically redirect to your key system website
-		-- For demonstration, we'll just show instructions
-		local originalText = GetKeyButton.Text
-		GetKeyButton.Text = "Check Discord for key!"
-		wait(2)
-		GetKeyButton.Text = originalText
-	end)
-	
-	-- Handle close button click
-	CloseButton.MouseButton1Click:Connect(function()
-		KeySystemGui:Destroy()
-	end)
-	
-	-- Add button press effect for Get Key button
-	GetKeyButton.MouseEnter:Connect(function()
-		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(150, 230, 255)}):Play()
-	end)
-	
-	GetKeyButton.MouseLeave:Connect(function()
-		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(100, 180, 250)}):Play()
-	end)
-	
-	-- Make UI draggable
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-	
-	local function update(input)
-		local delta = input.Position - dragStart
-		MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	end
-	
-	MainFrame.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = MainFrame.Position
-			
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-	
-	MainFrame.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	
-	game:GetService("UserInputService").InputChanged:Connect(function(input)
-		if input == dragInput and dragging then
-			update(input)
-		end
-	end)
-	
-	-- Add entrance animation
-	MainFrame.Position = UDim2.new(0.5, -200, -0.5, -125)
-	TweenService:Create(MainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back), {Position = UDim2.new(0.5, -200, 0.5, -125)}):Play()
+    if not getgenv().Key then       
+        warn("please enter your key!")
+    end  
+    game.Players.LocalPlayer:Kick("Invalid Key! Please enter your correct key!")
 end
