@@ -59,9 +59,8 @@ local CONFIG = {
         "c11fb845-db36-49ed-a299-0cb77712df9d",
         "bb40d302-20e1-4aa4-9f06-10258577b094",
         "0b424c1f-21a6-4e19-aeee-5d3b0305b113",
-        "552d33de-96f8-4758-bf77-9ca8c953d6e4",,
-        "34f449c9-e276-4e05-beee-f4e4cefe2282", -- Add more keys as needed
-		
+        "552d33de-96f8-4758-bf77-9ca8c953d6e4",
+        "34f449c9-e276-4e05-beee-f4e4cefe2282",
 	},
 	MAX_ATTEMPTS = 3,
 	REMOTE_EVENT_NAME = "ValidateKey" -- Change this to match your RemoteEvent name
@@ -108,7 +107,7 @@ local function createKeySystemUI()
 	Shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Shadow.Size = UDim2.new(1, 40, 1, 40)
 	Shadow.ZIndex = -1
-	Shadow.Image = "rbxassetid://5028857084"
+	Shadow.Image = "rbxassetid:// 5028857084"
 	Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	Shadow.ImageTransparency = 0.5
 	Shadow.Parent = MainFrame
@@ -120,7 +119,7 @@ local function createKeySystemUI()
 	TitleLabel.BackgroundTransparency = 1
 	TitleLabel.Position = UDim2.new(0, 0, 0, 10)
 	TitleLabel.Font = Enum.Font.GothamBold
-	TitleLabel.Text = "Dex Skibidi make key ui"
+	TitleLabel.Text = "Mastery Hub Key System"
 	TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TitleLabel.TextSize = 24
 	TitleLabel.Parent = MainFrame
@@ -396,6 +395,15 @@ end
 
 -- Run the key system
 runKeySystem()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Yes Or No";
+    Text = "U want reset Config?";
+    Icon = "rbxassetid://103691718434653";
+    Duration = 1e5;
+	Button1 = "Yes";
+	Button2 = "No";
+})
+
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
@@ -1723,12 +1731,12 @@ end
 print("--[[Loaded UI]]--")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
-    Title = "Mastery Hub [Free]",
-    SubTitle = "MAKE BY QMINH (KENNY)",
-    TabWidth = 160,
+    Title = "Mastery Hub-Blox Fruit [Free]",
+    SubTitle = "by Qminh(Kenny)",
+    TabWidth = 155,
     Size = UDim2.fromOffset(500, 350),
     Acrylic = false, 
-    Theme = "Light",
+    Theme = "Neon",
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
 Shop = Window:AddTab({ Title = "Tab Shop", Icon = "" })
@@ -1810,7 +1818,7 @@ Shop:AddButton({
 })
 Shop:AddParagraph({
     Title = "Fighting Shop",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
@@ -1933,7 +1941,7 @@ Shop:AddButton({
 })
 Shop:AddParagraph({
     Title = "Abilities Shop",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Shop:AddButton({
 	Title = "Skyjump [ $10,000 Beli ]",
@@ -1961,7 +1969,7 @@ Shop:AddButton({
 })
 Shop:AddParagraph({
     Title = "Misc Shop",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Shop:AddButton({
      Title = "Buy Refund Stat (2500F)",
@@ -2222,7 +2230,7 @@ end)
 Input = Server:AddInput("Input", {
      Title = "Input Job Id",
      Default = "",
-     Placeholder = "Paste Job Id",
+     Placeholder = "",
      Numeric = false,
      Finished = false,
      Callback = function(Value)
@@ -2356,19 +2364,19 @@ LGa:AddButton({
 })
 LGa:AddButton({
 	Title = "Show Item",
-	Description = "I'm Still Fixing....",
+	Description = "",
 	Callback = function()	
 	end
 })
 LGa:AddButton({
     Title = "Open Devil Fruit Shop [ Mirage ]",
-    Description = "I'm Still Fixing....",
+    Description = "",
     Callback = function()     
     end
 })
 LGa:AddButton({
     Title = "Open Devil Fruit Shop",
-    Description = "I'm Still Fixing....",
+    Description = "",
     Callback = function()            
     end
 })
@@ -3121,13 +3129,13 @@ Main:AddButton({
     Title = "Copy discord invite link",
     Callback = function()
         pcall(function()
-            setclipboard("https://discord.gg/sqtfDGfZ")
+            setclipboard("https://discord.gg/2YCGftRB")
         end)
     end
 })
 Main:AddParagraph({
      Title = "Main Farm",
-     Content = string.rep("-", 21)
+     Content = "-----"
 })
 Dropdown = Main:AddDropdown("DropdownFarm", {
     Title = "Select Method Farm",
@@ -3392,7 +3400,7 @@ Toggle:OnChanged(function(Value)
 end)
 Main:AddParagraph({
      Title = "Farming Material",
-     Content = string.rep("-", 21)
+     Content = "-----"
 })
 local MaterialList = {}
 if World1 then
@@ -3465,7 +3473,7 @@ spawn(function()
 end)
 Main:AddParagraph({
      Title = "Mastery Farm",
-     Content = string.rep("-", 21)
+     Content = "-----"
 })
 Slider = Main:AddSlider("Slider", {
      Title = "Select Health [ % ]",
@@ -4835,7 +4843,7 @@ spawn(function()
 end)
 Other:AddParagraph({
         Title = "Farm Chest",
-        Content = string.rep("-", 21)
+        Content = "-----"
 })
 ToggleChest = Other:AddToggle("ToggleChest", {Title = "Auto Chest", Default = false })
 ToggleChest:OnChanged(function(Value)
@@ -4892,7 +4900,7 @@ spawn(function()
 end)
 Other:AddParagraph({
      Title = "Farm Observation",
-     Content = string.rep("-", 21)
+     Content = "-----"
 })
 ObservationRange = Other:AddParagraph({
     Title = "Observation Level",
@@ -5121,7 +5129,7 @@ spawn(function()
 end)
 Other:AddParagraph({
      Title = "Auto Boss",
-     Content = string.rep("-", 21)
+     Content = "-----"
 })
 if World1 then
     tableBoss = {
@@ -5424,7 +5432,7 @@ spawn(function()
 end)
 Blog:AddParagraph({
     Title = "Raids",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Dropdown = Blog:AddDropdown("Dropdown", {
     Title = "Select Raid",
@@ -6312,7 +6320,7 @@ task.spawn(function()
 end)         
 Sea:AddParagraph({
         Title = "Kitsune Event",
-        Content = string.rep("-", 21)
+        Content = "-----"
     })    
 Toggle = Sea:AddToggle("Toggle", {Title = "Teleport To Kitsune Island",Default = false })
 Toggle:OnChanged(function(value)
@@ -6423,7 +6431,7 @@ Sea:AddButton({
 })
 Sea:AddParagraph({
         Title = "Leviathan Event",
-        Content = string.rep("-", 21)
+        Content = "-----"
     })
 Sea:AddButton({
     Title = "Buy Spy",
@@ -6486,7 +6494,7 @@ end)
 ChooseSkill = Window:AddTab({ Title = "Tab Setting Select Skill", Icon = "" })
 ChooseSkill:AddParagraph({
     Title = "Setting Sea Event",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 ChooseSkill:AddParagraph({
     Title = "Activating Skill Event,\nAnd Skill Leviathan Flawless Fusion",
@@ -6524,7 +6532,7 @@ ChooseSkill:AddParagraph({
 })
 ChooseSkill:AddParagraph({
     Title = "Setting Skill Fruit",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = ChooseSkill:AddToggle("Toggle", {
     Title = "Skill Fruit Z",
@@ -6566,7 +6574,7 @@ ChooseSkill:AddParagraph({
 })
 ChooseSkill:AddParagraph({
     Title = "Setting Skill Melee",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = ChooseSkill:AddToggle("Toggle", {
     Title = "Skill Melee Z",
@@ -6594,7 +6602,7 @@ ChooseSkill:AddParagraph({
 })
 ChooseSkill:AddParagraph({
     Title = "Setting Skill Sword And Gun",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = ChooseSkill:AddToggle("Toggle", {
     Title = "Sword And Gun Skill Z",
@@ -6895,7 +6903,7 @@ spawn(function()
 end)
 Volcanic:AddParagraph({
     Title = "Setting Skill Volcano Island",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = Volcanic:AddToggle("Toggle", {
     Title = "Auto Use Skill Melee",
@@ -6921,7 +6929,7 @@ end)
 Race = Window:AddTab({ Title = "Tab Upgrade Race", Icon = "" })
 Race:AddParagraph({
     Title = "Race Draco",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 local RunService = game:GetService("RunService")
 Toggle = Race:AddToggle("Toggle", {Title = "Teleport To The Draco Clan Trial Door", Default = false})
@@ -6946,7 +6954,7 @@ spawn(function()
 end)
 Race:AddParagraph({
     Title = "Race Normal",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = Race:AddToggle("Toggle", {Title = "Auto Upgrade Race V2", Default = false })
 Toggle:OnChanged(function(Value)
@@ -7096,7 +7104,7 @@ spawn(function()
 end)
 Race:AddParagraph({
     Title = "Race V4",
-    Content = string.rep("-", 21)
+    Content = "-----"
 })
 Toggle = Race:AddToggle("Toggle", {Title = "No Frog", Default = false})
 Toggle:OnChanged(function(Value)
@@ -8428,94 +8436,71 @@ Input = PVP:AddInput("Input", {
      end
 })
 ----------------------------------------------------------------------------------------------------
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Mastery Hub";
-    Text = "U want reset Config?";
-    Icon = "rbxassetid://103691718434653";
-    Duration = 1e5;
-	Button1 = "Yes";
-	Button2 = "No";
-})
+local MasteryHubBtn = Instance.new("ScreenGui")
+    local dutdit = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local ImageLabel = Instance.new("ImageLabel")
+    local TextButton = Instance.new("TextButton")
 
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local ImageLabel = Instance.new("ImageLabel")
-local UICorner = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
+    MasteryHubBtn.Name = "Mastery Hub Btn"
+    MasteryHubBtn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    MasteryHubBtn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ScreenGui.Parent = game:GetService("CoreGui")  
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    dutdit.Name = "dut dit"
+    dutdit.Parent = MasteryHubBtn
+    dutdit.AnchorPoint = Vector2.new(0.1, 0.1)
+    dutdit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    dutdit.Position = UDim2.new(0, 20, 0.1, -6)
+    dutdit.Size = UDim2.new(0, 50, 0, 50)
 
-Frame.Parent = ScreenGui
-Frame.AnchorPoint = Vector2.new(0.1, 0.1)
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 0
-Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame.BorderSizePixel = 1
-Frame.Position = UDim2.new(0, 20, 0.1, -6)  
-Frame.Size = UDim2.new(0, 50, 0, 50)
-Frame.Name = "dut dit"
+    UICorner.CornerRadius = UDim.new(1, 0)
+    UICorner.Parent = dutdit
 
-ImageLabel.Parent = Frame
-ImageLabel.Name = "Mastery Test"
-ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel.Size = UDim2.new(0, 40, 0, 40)
-ImageLabel.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-ImageLabel.BackgroundTransparency = 1
-ImageLabel.BorderSizePixel = 1
-ImageLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=103691718434653"
+    ImageLabel.Parent = dutdit
+    ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+    ImageLabel.BackgroundTransparency = 1.0
+    ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+    ImageLabel.Size = UDim2.new(0, 40, 0, 40)
+    ImageLabel.Image = "rbxassetid://103691718434653"
 
-UICorner.CornerRadius = UDim.new(1, 0)
-UICorner.Parent = Frame
+    TextButton.Parent = dutdit
+    TextButton.BackgroundTransparency = 1.0
+    TextButton.Size = UDim2.new(1, 0, 1, 0)
+    TextButton.Font = Enum.Font.SourceSans
+    TextButton.Text = ""
+    TextButton.TextColor3 = Color3.fromRGB(27, 42, 53)
 
-TextButton.Name = "TextButton"
-TextButton.Parent = Frame
-TextButton.AnchorPoint = Vector2.new(0, 0)
-TextButton.Position = UDim2.new(0, 0, 0, 0)
-TextButton.Size = UDim2.new(1, 0, 1, 0)
-TextButton.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-TextButton.BackgroundTransparency = 1
-TextButton.BorderSizePixel = 1
-TextButton.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TextButton.TextColor3 = Color3.fromRGB(27, 42, 53)
-TextButton.Text = ""
-TextButton.Font = Enum.Font.SourceSans
-TextButton.TextSize = 8
-TextButton.TextTransparency = 0
+    local TweenService = game:GetService("TweenService")
+    local VirtualInputManager = game:GetService("VirtualInputManager")
 
-local TweenService = game:GetService("TweenService")
-local VirtualInputManager = game:GetService("VirtualInputManager")
+    local zoomedIn = false
+    local originalSize = UDim2.new(0, 40, 0, 40)
+    local zoomedSize = UDim2.new(0, 30, 0, 30)
+    local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 
-local zoomedIn = false
-local originalSize = UDim2.new(0, 40, 0, 40)
-local zoomedSize = UDim2.new(0, 30, 0, 30)
-local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local faded = false
+    local fadeInTween = TweenService:Create(dutdit, tweenInfo, {BackgroundTransparency = 0.25})
+    local fadeOutTween = TweenService:Create(dutdit, tweenInfo, {BackgroundTransparency = 0})
 
-local faded = false
-local fadeInTween = TweenService:Create(Frame, tweenInfo, {BackgroundTransparency = 0.25})
-local fadeOutTween = TweenService:Create(Frame, tweenInfo, {BackgroundTransparency = 0})
+    TextButton.MouseButton1Down:Connect(
+        function()
+            if zoomedIn then
+                TweenService:Create(ImageLabel, tweenInfo, {Size = originalSize}):Play()
+            else
+                TweenService:Create(ImageLabel, tweenInfo, {Size = zoomedSize}):Play()
+            end
+            zoomedIn = not zoomedIn
 
-TextButton.MouseButton1Down:Connect(function()
+            if faded then
+                fadeOutTween:Play()
+            else
+                fadeInTween:Play()
+            end
+            faded = not faded
 
-    if zoomedIn then
-        TweenService:Create(ImageLabel, tweenInfo, {Size = originalSize}):Play()
-    else
-        TweenService:Create(ImageLabel, tweenInfo, {Size = zoomedSize}):Play()
-    end
-    zoomedIn = not zoomedIn
-
-    if faded then
-        fadeOutTween:Play()
-    else
-        fadeInTween:Play()
-    end
-    faded = not faded
-
-    VirtualInputManager:SendKeyEvent(true, "LeftControl", false, game)
-end)
+            VirtualInputManager:SendKeyEvent(true, "LeftControl", false, game)
+        end
+    )
 --\\ ♡VIP♡
 ----------------------------------------------------------------------------------------------------
 print("--[[Hop Server If You Meet Game Admin]]--")
