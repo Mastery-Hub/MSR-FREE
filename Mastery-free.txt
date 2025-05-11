@@ -60,7 +60,7 @@ local CONFIG = {
         "bb40d302-20e1-4aa4-9f06-10258577b094",
         "0b424c1f-21a6-4e19-aeee-5d3b0305b113",
         "552d33de-96f8-4758-bf77-9ca8c953d6e4",
-        "34f449c9-e276-4e05-beee-f4e4cefe2282",
+        "34f449c9-e276-4e05-beee-f4e4cefe2282"
 	},
 	MAX_ATTEMPTS = 3,
 	REMOTE_EVENT_NAME = "ValidateKey" -- Change this to match your RemoteEvent name
@@ -298,100 +298,6 @@ local function runKeySystem()
 			
 			-- Here you would typically fire a RemoteEvent to the server
 			-- to load your script after successful validation
-			
-		else
-			-- Key is invalid
-			attempts = attempts - 1
-			
-			if attempts <= 0 then
-				StatusLabel.Text = "Too many attempts. Try again later."
-				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
-				SubmitButton.Visible = false
-				KeyInput.Visible = false
-				
-				-- Kick the player after a delay
-				wait(3)
-				Player:Kick("Too many invalid key attempts")
-			else
-				StatusLabel.Text = "Invalid key! Attempts remaining: " .. attempts
-				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
-				
-				-- Shake animation for invalid key
-				local originalPosition = MainFrame.Position
-				for i = 1, 5 do
-					MainFrame.Position = originalPosition + UDim2.new(0, math.random(-5, 5), 0, 0)
-					wait(0.05)
-				end
-				MainFrame.Position = originalPosition
-			end
-		end
-	end)
-	
-	-- Handle get key button click
-	GetKeyButton.MouseButton1Click:Connect(function()
-		-- Here you would typically redirect to your key system website
-		-- For demonstration, we'll just show instructions
-		local originalText = GetKeyButton.Text
-		GetKeyButton.Text = "Check Discord for key!"
-		wait(2)
-		GetKeyButton.Text = originalText
-	end)
-	
-	-- Handle close button click
-	CloseButton.MouseButton1Click:Connect(function()
-		KeySystemGui:Destroy()
-	end)
-	
-	-- Add button press effect for Get Key button
-	GetKeyButton.MouseEnter:Connect(function()
-		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(150, 230, 255)}):Play()
-	end)
-	
-	GetKeyButton.MouseLeave:Connect(function()
-		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(100, 180, 250)}):Play()
-	end)
-	
-	-- Make UI draggable
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-	
-	local function update(input)
-		local delta = input.Position - dragStart
-		MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	end
-	
-	MainFrame.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = MainFrame.Position
-			
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-	
-	MainFrame.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	
-	game:GetService("UserInputService").InputChanged:Connect(function(input)
-		if input == dragInput and dragging then
-			update(input)
-		end
-	end)
-	
-	-- Add entrance animation
-	MainFrame.Position = UDim2.new(0.5, -200, -0.5, -125)
-	TweenService:Create(MainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back), {Position = UDim2.new(0.5, -200, 0.5, -125)}):Play()
-end
 
 -- Run the key system
 runKeySystem()
@@ -8540,4 +8446,98 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     lastNotificationTime = currentTime
+end
+
+else
+			-- Key is invalid
+			attempts = attempts - 1
+			
+			if attempts <= 0 then
+				StatusLabel.Text = "Too many attempts. Try again later."
+				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+				SubmitButton.Visible = false
+				KeyInput.Visible = false
+				
+				-- Kick the player after a delay
+				wait(3)
+				Player:Kick("Too many invalid key attempts")
+			else
+				StatusLabel.Text = "Invalid key! Attempts remaining: " .. attempts
+				StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+				
+				-- Shake animation for invalid key
+				local originalPosition = MainFrame.Position
+				for i = 1, 5 do
+					MainFrame.Position = originalPosition + UDim2.new(0, math.random(-5, 5), 0, 0)
+					wait(0.05)
+				end
+				MainFrame.Position = originalPosition
+			end
+		end
+	end)
+	
+	-- Handle get key button click
+	GetKeyButton.MouseButton1Click:Connect(function()
+		-- Here you would typically redirect to your key system website
+		-- For demonstration, we'll just show instructions
+		local originalText = GetKeyButton.Text
+		GetKeyButton.Text = "Check Discord for key!"
+		wait(2)
+		GetKeyButton.Text = originalText
+	end)
+	
+	-- Handle close button click
+	CloseButton.MouseButton1Click:Connect(function()
+		KeySystemGui:Destroy()
+	end)
+	
+	-- Add button press effect for Get Key button
+	GetKeyButton.MouseEnter:Connect(function()
+		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(150, 230, 255)}):Play()
+	end)
+	
+	GetKeyButton.MouseLeave:Connect(function()
+		TweenService:Create(GetKeyButton, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(100, 180, 250)}):Play()
+	end)
+	
+	-- Make UI draggable
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	MainFrame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = MainFrame.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	MainFrame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+	
+	-- Add entrance animation
+	MainFrame.Position = UDim2.new(0.5, -200, -0.5, -125)
+	TweenService:Create(MainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back), {Position = UDim2.new(0.5, -200, 0.5, -125)}):Play()
 end
